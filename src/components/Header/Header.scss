@@ -1,0 +1,19 @@
+header {
+  width: 700px;
+  height: 150px;
+  border: 4px solid rgb(185, 185, 185);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+  padding: 1.3rem;
+  border-radius: 1rem;
+  & h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 10px;
+    width: 0;
+    line-height: 2rem;
+  }
+}
