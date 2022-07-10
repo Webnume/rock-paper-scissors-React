@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { getFromLS } from "../../utils/storage";
+
+const scoreStorage = getFromLS("score");
 
 export interface GameState {
   player1: string;
@@ -9,7 +12,7 @@ export interface GameState {
 
 const initialState: GameState = {
   player1: "",
-  score: 0,
+  score: scoreStorage ? scoreStorage : 0,
   emotes: ["paper", "scissors", "rock"],
 };
 

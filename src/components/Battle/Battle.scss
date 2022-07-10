@@ -3,15 +3,17 @@
   // display: flex;
   // align-items: center;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr, 30%);
+  align-items: center;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: repeat(2, 1fr);
 
   & .player-picked {
     grid-column: 2/3;
     grid-row: 1/2;
   }
   & .house-picked {
-    grid-column: 4/5;
+    grid-column: 4/7;
     grid-row: 1/2;
   }
   & .left {
@@ -19,8 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-column: 2 / 3;
-    grid-row: 2/ 3;
+    grid-column: 2/3;
   }
   & .right {
     margin-left: 1rem;
@@ -28,13 +29,11 @@
     align-items: center;
     justify-content: center;
     grid-column: 4 / 5;
-    grid-row: 2/ 3;
   }
   & .center {
     margin: 0 1rem;
-    z-index: 1;
+    z-index: 13;
     grid-column: 3/4;
-    grid-row: 2/ 3;
   }
   & h3 {
     font-size: 44px;
@@ -49,32 +48,54 @@
     cursor: pointer;
     z-index: 1;
   }
-  .hands {
-    font-size: 7rem;
+
+  & .hands {
+    // font-size: 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     color: rgb(54, 54, 54);
-    padding: 3.8rem;
+    padding: 5rem 5.8rem;
     border-radius: 50%;
     border-width: 2.5rem;
     z-index: 1;
     cursor: unset;
+    & svg {
+      transform: scale(1.5);
+    }
+    & img {
+      width: 5rem;
+    }
+
+    &.paper {
+      border: 2rem solid rgb(76, 64, 240);
+      box-shadow: 0px 14px 2px rgb(3, 80, 143);
+    }
+    &.scissors {
+      border: 2rem solid rgb(245, 182, 10);
+      box-shadow: 0px 14px 2px rgb(255, 155, 4);
+    }
+    &.rock {
+      border: 1.5rem solid rgb(250, 39, 39);
+      box-shadow: 0px 14px 2px rgb(199, 43, 43);
+    }
   }
   & .empty-slot {
     padding: 2rem;
     background-color: darken($color: white, $amount: 90%);
-    color: white;
     border-radius: 50%;
     padding: 6rem;
+    height: 10%;
+    z-index: 0;
+    grid-column: 5/6;
   }
   & h2 {
     font-size: 1.5rem;
     margin-bottom: 5rem;
     z-index: 1;
   }
-  
+
   & .winner {
     position: absolute;
     font-size: 2rem;
@@ -84,6 +105,7 @@
     width: 700px;
     height: 700px;
     border-radius: 50%;
+    grid-column: 2/3;
+    z-index: -1;
   }
-
 }
