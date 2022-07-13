@@ -26,9 +26,11 @@ function Battle() {
   const result = shuffledArray.filter((typ: any) => typ !== emote);
 
   const rules: { [key: string]: any } = {
-    paper: ["rock"],
-    rock: ["scissors"],
-    scissors: ["paper"],
+    paper: ["rock","spock"],
+    rock: ["scissors","lizard"],
+    scissors: ["paper", "lizard"],
+    lizard: ["paper", "spock"],
+    spock: ["rock", "scissors"],
   };
 
   const handleClick = () => {
@@ -61,16 +63,18 @@ function Battle() {
 
   return (
     <section className="battle">
-      <h2 className="player-picked">YOU PICKED</h2>
-      <div className={`left hands ${emote}`}>
-        <Icon emote={player1 || emote} />
+      <div className="left">
+        <h2>YOU PICKED</h2>
+        <div className={`hands ${emote}`}>
+          <Icon emote={player1 || emote} />
+        </div>
         {winner && player2 && <div className="winner"></div>}
       </div>
       {player2 ? (
         <div className="center">
           <h3>{winner ? "YOU WIN" : "YOU LOOSE"}</h3>
           <motion.button
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, color: "rgb(255 44 44)" }}
             whileTap={{ scale: 0.9 }}
             onClick={handleClick}
           >
@@ -81,22 +85,21 @@ function Battle() {
         ""
       )}
 
-      <h2 className="house-picked">THE HOUSE PICKED</h2>
-      {player2 ? (
-        <>
-          <div className={`right hands ${player2}`}>
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0, zIndex: 1 }}
-              animate={{ scale: 1, opacity: 1 }}
-            >
-              <Icon emote={player2} />
-            </motion.div>
-            {!winner && <div className="winner"></div>}
-          </div>
-        </>
-      ) : (
-        <span className="empty-slot"></span>
-      )}
+      <div className="right">
+        <h2>THE HOUSE PICKED</h2>
+        {player2 ? (
+          <motion.div
+            className={`hands ${player2}`}
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, zIndex: 1 }}
+          >
+            <Icon emote={player2} />
+          </motion.div>
+        ) : (
+          <span className="empty-slot"></span>
+        )}
+        {!winner && player2 && <div className="winner"></div>}
+      </div>
     </section>
   );
 }

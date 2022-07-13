@@ -1,11 +1,20 @@
 footer {
-  width: 700px;
-  height: 50px;
-  
-  & button{
-    position: fixed;
+  width: 100vw;
+  // height: 50px;
+  position: fixed;
+  bottom: 3rem;
+  // right: 1.8rem;
+  display: flex;
+  justify-content: space-around;
+
+  @media screen and (max-width: 700px) {
     bottom: 3rem;
-    right: 3rem;
+    right: unset;
+  }
+  & button {
+    // position: fixed;
+    // bottom: 3rem;
+    // right: 3rem;
     font-size: 1rem;
     border: 1px solid white;
     border-radius: 1rem;
@@ -15,5 +24,13 @@ footer {
     font-weight: 700;
     cursor: pointer;
     z-index: 1;
+    margin-top: 1rem;
+
+    @media screen and (max-width: 700px) {
+      padding: 0.7rem 1.9rem;
+      position: unset;
+      display: flex;
+      border-radius: .5rem;
+    }
   }
 }

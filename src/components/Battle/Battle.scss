@@ -1,66 +1,80 @@
 .battle {
   color: white;
-  // display: flex;
-  // align-items: center;
-  display: grid;
-  align-items: center;
-  // grid-template-columns: repeat(4, 1fr);
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 
-  & .player-picked {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-  & .house-picked {
-    grid-column: 4/7;
-    grid-row: 1/2;
+  @media screen and (max-width: 700px) {
+    transform: scale(0.7);
+    align-items: flex-end;
   }
   & .left {
     margin-right: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-column: 2/3;
+    @media screen and (max-width: 700px) {
+      flex-direction: column-reverse;
+    }
   }
   & .right {
     margin-left: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-column: 4 / 5;
+    @media screen and (max-width: 700px) {
+      flex-direction: column-reverse;
+      margin-left: 4rem;
+    }
   }
   & .center {
     margin: 0 1rem;
     z-index: 13;
-    grid-column: 3/4;
+    place-self: center;
+    @media screen and (max-width: 700px) {
+      position: absolute;
+      bottom: -60%;
+      align-items: center;
+    }
   }
   & h3 {
     font-size: 44px;
     z-index: 1;
+    @media screen and (max-width: 700px) {
+      font-size: 4rem;
+    }
   }
   & button {
     font-size: 1rem;
-    border-radius: 0.4rem;
+    border-radius: 0.5rem;
     padding: 1.5rem 5rem;
-    color: rgb(228, 0, 0);
+    color: hsl(229, 25%, 31%);
     font-weight: 900;
     cursor: pointer;
     z-index: 1;
+    @media screen and (max-width: 700px) {
+      border-radius: 1rem;
+    }
   }
 
   & .hands {
     // font-size: 7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     background-color: white;
     color: rgb(54, 54, 54);
-    padding: 5rem 5.8rem;
+    padding: 5rem;
     border-radius: 50%;
     border-width: 2.5rem;
     z-index: 1;
     cursor: unset;
+
+    @media screen and (max-width: 700px) {
+      padding: 3rem;
+    }
     & svg {
       transform: scale(1.5);
     }
@@ -69,43 +83,63 @@
     }
 
     &.paper {
-      border: 2rem solid rgb(76, 64, 240);
-      box-shadow: 0px 14px 2px rgb(3, 80, 143);
+      border: 1rem solid hsl(230, 89%, 65%);
+      box-shadow: inset 0px 10px 2px rgb(212, 212, 212),
+        0px 10px 2px hsl(230, 89%, 62%);
     }
     &.scissors {
-      border: 2rem solid rgb(245, 182, 10);
-      box-shadow: 0px 14px 2px rgb(255, 155, 4);
+      border: 1rem solid hsl(40, 84%, 53%);
+      box-shadow: inset 0px 10px 2px rgb(212, 212, 212),
+        0px 10px 2px hsl(39, 89%, 49%);
     }
     &.rock {
-      border: 1.5rem solid rgb(250, 39, 39);
-      box-shadow: 0px 14px 2px rgb(199, 43, 43);
+      border: 1rem solid hsl(349, 70%, 56%);
+      box-shadow: inset 0px 10px 2px rgb(212, 212, 212),
+        0px 10px 2px hsl(349, 71%, 52%);
+    }
+    &.lizard {
+      border: 1rem solid hsl(261, 72%, 63%);
+      box-shadow: inset 0px 10px 2px rgb(212, 212, 212),
+        0px 10px 2px hsl(261, 73%, 60%);
+    }
+    &.spock {
+      border: 1rem solid hsl(189, 58%, 57%);
+      box-shadow: inset 0px 10px 2px rgb(212, 212, 212),
+        0px 10px 2px hsl(189, 59%, 53%);
     }
   }
   & .empty-slot {
-    padding: 2rem;
+    // padding: 2rem;
     background-color: darken($color: white, $amount: 90%);
     border-radius: 50%;
     padding: 6rem;
     height: 10%;
     z-index: 0;
-    grid-column: 5/6;
+    // margin: 1.7rem;
+    @media screen and (max-width: 700px) {
+      padding: 5rem;
+    }
   }
   & h2 {
     font-size: 1.5rem;
     margin-bottom: 5rem;
     z-index: 1;
+    width: 116%;
   }
 
   & .winner {
-    position: absolute;
-    font-size: 2rem;
-    font-weight: 900;
-    // background-color: rgb(228, 0, 0);
+    position: fixed;
     background: radial-gradient(closest-side, #d8d8d8ec, #b6b6b633, #5050500e);
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    grid-column: 2/3;
-    z-index: -1;
+    z-index: 0;
+    top: 160px;
+
+    @media screen and (max-width: 700px) {
+      top: -126px;
+      width: 450px;
+      height: 450px;
+    }
   }
 }

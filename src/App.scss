@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato:wght@400;700;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Sans&display=swap");
 .App {
   height: 100vh;
   font-family: "DM Sans", sans-serif;
-  font-family: "Lato", sans-serif;
-  background: linear-gradient(to right, rgb(0, 24, 51), rgb(1, 46, 71));
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to right, hsl(237, 49%, 15%), hsl(214, 47%, 23%));
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
   align-items: center;
+  overflow-x: hidden;
+  @media screen and (max-width: 700px) {
+    // justify-content: space-around;
+  }
 }

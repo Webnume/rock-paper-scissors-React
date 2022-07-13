@@ -8,12 +8,16 @@ export interface GameState {
   player1: string;
   score: number;
   emotes: string[];
+  emotesBonus: string[];
+  isBonusGame: boolean;
 }
 
 const initialState: GameState = {
   player1: "",
   score: scoreStorage ? scoreStorage : 0,
   emotes: ["paper", "scissors", "rock"],
+  emotesBonus: ["paper", "scissors", "rock", "lizard", "spock"],
+  isBonusGame: false,
 };
 
 export const gameSlice = createSlice({
@@ -33,10 +37,13 @@ export const gameSlice = createSlice({
     playerPicked: (state, action: PayloadAction<string>) => {
       state.player1 = action.payload;
     },
+    toggleBonusGame: (state) => {
+      state.isBonusGame = !state.isBonusGame;
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { playerPicked, increment, decrement } = gameSlice.actions;
+export const { playerPicked, increment, decrement,toggleBonusGame } = gameSlice.actions;
 
 export default gameSlice.reducer;

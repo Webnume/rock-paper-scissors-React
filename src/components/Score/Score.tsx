@@ -8,7 +8,7 @@ function Score() {
   return (
     <section className="score">
       <h2>SCORE</h2>
-      <span>{scoreStorage ? scoreStorage : scoreRedux}</span>
+      <span className="number">{scoreStorage ? scoreStorage : scoreRedux}</span>
     </section>
   );
 }

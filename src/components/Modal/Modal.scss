@@ -11,7 +11,7 @@
 
 .modal-wrapper {
   position: fixed;
-  top: 0;
+  top: 20%;
   left: 0;
   z-index: 1050;
   width: 100%;
@@ -29,6 +29,7 @@
   border-radius: 3px;
   max-width: 500px;
   padding: 2rem;
+  max-width: fit-content;
 }
 
 .modal-header {

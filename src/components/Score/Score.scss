@@ -6,22 +6,34 @@
     width: 130px;
     height: 100px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 1;    
+    @media screen and (max-width: 700px) {
+        padding: 0.1rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: .5rem;
+      }
     & h2{
-        color: rgb(30, 70, 109);
-        font-size: 20px;
+        color: hsl(229, 64%, 46%);
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
-        margin: 0;
+        margin: 0;   
+        @media screen and (max-width: 700px) {
+            font-size: 1rem;
+          }
     }
-    & span{
+    & .number{
         color: rgb(102, 102, 102);
         font-size: 3.5rem;
         font-weight: bold;
-        text-align: center;
+        text-align: center;   
+        @media screen and (max-width: 700px) {
+            font-size: 2rem;
+          }
     }
 }
