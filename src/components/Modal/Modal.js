@@ -4,13 +4,7 @@ import "./Modal.scss";
 import { ReactComponent as Rules } from "../../assets/images/image-rules.svg";
 import { ReactComponent as RulesBonus } from "../../assets/images/image-rules-bonus.svg";
 import { ReactComponent as Close } from "../../assets/images/icon-close.svg";
-import { getFromLS } from "../../utils/storage";
 
-
-  // const isBonusGame = useSelector((state: RootState) => state.game.isBonusGame);
-  
-  const isBonusGame = getFromLS("isBonusGame");
-  console.log(isBonusGame);
 
 const Modal = ({ isShowing, hide,isBonusGame }) =>
   isShowing
