@@ -19,7 +19,7 @@ function Footer() {
 
   return (
     <footer>
-      <Modal isShowing={isShowing} hide={toggle} />
+      <Modal isShowing={isShowing} hide={toggle} isBonusGame={isBonusGame} />
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

@@ -12,7 +12,7 @@ import { getFromLS } from "../../utils/storage";
   const isBonusGame = getFromLS("isBonusGame");
   console.log(isBonusGame);
 
-const Modal = ({ isShowing, hide }) =>
+const Modal = ({ isShowing, hide,isBonusGame }) =>
   isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
