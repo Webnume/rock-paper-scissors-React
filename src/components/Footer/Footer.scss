@@ -1,20 +1,15 @@
 footer {
-  width: 100vw;
-  // height: 50px;
+  width: clamp(30%, 80%, 800px);
   position: fixed;
   bottom: 3rem;
-  // right: 1.8rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   @media screen and (max-width: 700px) {
     bottom: 1rem;
     right: unset;
   }
   & button {
-    // position: fixed;
-    // bottom: 3rem;
-    // right: 3rem;
     font-size: 1rem;
     border: 3px solid hsl(217, 16%, 45%);
     border-radius: .7rem;
