@@ -11,17 +11,17 @@ import { motion } from "framer-motion";
 function Battle() {
   let navigate = useNavigate();
   const player1 = useSelector((state: RootState) => state.game.player1);
+  const [player2, setPlayer2] = useState("");
   const dispatch = useDispatch();
   const emotes = useSelector((state: RootState) => state.game.emotes);
   const emote = getFromLS("emote");
   const scoreRedux = useSelector((state: RootState) => state.game.score);
   const scoreStorage = getFromLS("scoreStorage");
-  const [player2, setPlayer2] = useState("");
   const [winner, setWinner] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const shuffledArray = [...emotes].sort(
-    (a: any, b: any) => 0.5 - Math.random()
+    (_a: any, _b: any) => 0.5 - Math.random()
   );
   const result = shuffledArray.filter((typ: any) => typ !== emote);
 
