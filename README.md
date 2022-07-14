@@ -13,6 +13,7 @@ This project code quality was tested with [Sonarcloud.io](https://sonarcloud.io/
 # Rock, Paper, Scissors, Lizard, Spock
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deployed on Netlify : [Live Demo](https://snazzy-sundae-190c28.netlify.app/)
 
 ## The challenge
 
