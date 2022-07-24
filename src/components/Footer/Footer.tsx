@@ -19,27 +19,18 @@ function Footer() {
   };
 
   const escFunction = (event: any) => {
-
     if (event.key === "Escape" && isShowing) {
-      //Do whatever when esc is pressed
-      console.log("esc");
-
       return toggle();
     }
-  }
+  };
 
   useEffect(() => {
-    console.log(isShowing);
     document.addEventListener("keydown", escFunction, false);
 
     return () => {
       document.removeEventListener("keydown", escFunction, false);
     };
   }, [isShowing]);
-  
-  // useEffect(() => {
-  //   console.log(isShowing);
-  // }, [isShowing]);
 
   return (
     <footer>
