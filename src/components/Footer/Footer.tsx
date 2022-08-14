@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleBonusGame } from "../../store/features/gameSlice";
 import { setToLS } from "../../utils/storage";
 import { RootState } from "../../store/store";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 function Footer() {
   const dispatch = useDispatch();
